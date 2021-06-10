@@ -1,6 +1,6 @@
 
 
-# PreRequisites
+# Prerequisites
 
 first you need to install node in your system.
 
