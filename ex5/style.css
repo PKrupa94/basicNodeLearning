@@ -1,0 +1,171 @@
+/* Border box declaration 
+https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+html {
+  box-sizing: border-box;
+}
+/* inherit border-box on all elements in the universe and before and after
+ */
+*, 
+*:before, 
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+	font-family: Arial, Geneva, sans-serif;
+}
+
+.wrapper {
+	width: 97%;
+	max-width: 1200px;
+	margin: 0 auto;
+	float: none;
+	background-color: #fff;
+}
+
+div img {
+	width: 100%;
+	max-width: 225px; 
+}
+
+.button{
+	width: 100px;
+	position: relative;
+	margin: 12px;
+	padding: 9px;
+	background-color: #6C4831;
+	display: inline-block;
+	color: #F4EEDE;
+	text-align: center;
+	text-decoration: none;
+	font-size: 15px;
+	border-radius: 5px;
+}
+
+/* grid system -- mobile first! */
+/* flex contatiner */
+
+/* parent */
+.row {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+/* attribute selector to give some margin between columns and apply styles to flex items */
+
+[class*="col-"] {
+	margin-left: 4%;
+    flex: 0 0 92%; 
+}
+
+/* child */
+.row-Column{
+	display: flex;
+	flex-flow: column wrap;
+	margin-left: 4%;
+    flex: 0 0 92%; 
+}
+
+/* subchild */
+.item{
+	/* flex-grow: 1;  */
+	margin-bottom: 5%;
+	background-color:#eedddd;
+}
+
+.headline{
+	display: flex;
+	justify-content: center;
+	background-color: #904E2B;
+	width: 92%;
+	margin: 0 auto;
+	margin-top: 10px;
+	color: #F4EEDE;
+}
+
+
+/* Add background colors to see how much space each column is taking */
+
+h3{
+	color: #904A30;
+	text-align: center;
+}
+
+.col-1 {
+	background-color: #DBCDBB;
+}
+
+.col-2 {
+	background-color: #f0d7a7;
+}
+
+.col-row-5b{
+	background-color: #f0d7a7;
+}
+
+.col-row-3a{
+	background-color: #DBCDBB;
+}
+
+.col-row-3b{
+	background-color: #bbbbbb;
+}
+
+.col-row-4{
+	background-color: #ffce94;
+} 
+
+/* Tablet Landscape Screen Sizes */
+@media only screen and (min-width: 480px)  {
+
+	.col-1 {
+		flex: 0 0 44%;
+	}
+  
+  	.col-2 {
+		flex: 0 0 44%;
+	}
+
+	.col-row-5b{
+		order: -1;
+	}
+
+	.row-Column{
+		flex: 0 0 44%;
+		flex-direction: column-reverse;
+	}
+}
+/* Desktop screen Sizes */
+@media only screen and (min-width: 768px) {
+  
+ 	.col-1 {
+		flex: 0 0 20%;
+	}
+  
+  	.col-2 {
+		flex: 0 0 44%;
+	}
+
+	.col-row-5b{
+		order: 0;
+		flex: 0 0 44%;
+	}
+
+	.col-row-3a{
+		flex: 0 0 20%;
+	}
+
+	.col-row-3b{
+		flex: 0 0 68%;
+	}
+
+	.col-row-4{
+		flex: 0 0 92%;
+	} 
+
+	.row-Column{
+		flex: 0 0 44%;
+		flex-direction: column;
+	}
+
+}
